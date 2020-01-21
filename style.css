@@ -1,11 +1,104 @@
-#all{
-  width: 80%;
+* {
+  padding: 0px;
+  margin:  0px;
 }
+body{
+  
+}
+#all{
+  font-family: 'Nanum Gothic', sans-serif;
+  width: 80%;
+  height: 1000px;
+  margin: 0px auto;
+}
+
 header {
-  border : 2px solid blue;
-  background-color: skyblue;
+  border : 2px solid #94C0E4;
+  background-color: #C3DBEC;
   text-align: center;
   color: white;
   font-size: 30px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 2px gray;
+}
+
+.reply {
+  background-color: #81B2D9;
+  padding: 5px 10px;
+  height: 30%;
+}
+
+.user-name,
+.comment{
+  margin-bottom: 15px;
+}
+
+.user-name input{
+  height: 20px;
+}
+
+.user-name h4,
+.comment h4{
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.comment {
+  height: 50%;
+}
+
+.comment textarea {
+  width: 80%;
+  height: 80%;
+}
+
+.tweet {
+  padding: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.readReply {
+    background-color: #CFEBF7;
+    margin-top: 10px;
+    /* padding: 5px 10px; */
+}
+.topBar{
+    background-color: #2B55B3;
+    padding: 5px 10px;
+  
+}
+.checkTweet{
+  padding: 5px;
+  font-size: 0.5em;
+  font-weight: bold;
+  width: 120px;
+}
+#replyList{
+  list-style:none;
+  padding:10px;
+  position: relative;
+}
+.list{
+    padding:10px 0px;
+    
+}
+/* .names {
+  font-size: 1em;
+  font-weight: 700;
+} */
+
+.list div span:nth-child(1){
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.date{
+    position: absolute;
+    text-align: right;
+    right:10px;
+}
+.underLine{
+    border-bottom:1px solid #9C9D9E;
+    padding-bottom: 10px;
 }
