@@ -1,76 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Twittler</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <title>twittler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="data.js"></script>
 </head>
 <body>
-  <div id="all">
-    <header>
-      Twittler
-    </header>
-
-    <section class="reply">
-        <div class="user-name">
-            <h4>UserName</h4>
-            <input type="text">
-        </div>
-
-        <div class="comment">
-            <h4>Comment</h4>
-            <textarea></textarea>
-        </div>
-
-        <button class="tweet">Tweet!</button>
-    </section>
-
-    <section class="readReply">
-      <div class="topBar">
-        <button class="checkTweet">check new tweet</button>
-      </div>
-      <ul id="replyList">
-        <li class="list">
-          <div>
-            <span class="names">ingikim</span>
-            <span class="date">2019-01-03 12:30:20</span>
-          </div>
-          <div class="underLine">Welcome to Code States #codestates</div>
-        </li>
-        <li class="list">
-          <div>
-            <span class="names">satya</span>
-            <span class="date">2019-01-04 18:30:20</span>
-          </div>
-          <div class="underLine">this is test message #pair #programming</div>
-        </li>
-        <li class="list">
-          <div>
-            <span class="names">sundar</span>
-            <span class="date">2019-01-05 07:30:20</span>
-          </div>
-          <div class="underLine">code now! #work #hard</div>
-        </li>
-        <li class="list">
-          <div>
-            <span class="names">steve</span>
-            <span class="date">2015-01-03 12:30:20</span>
-          </div>
-          <div class="underLine">stay hungry, and stay foolish</div>
-        </li>
-        <li class="list">
-          <div>
-            <span class="names">tim</span>
-            <span class="date">2019-01-04 18:30:20</span>
-          </div>
-          <div class="underLine">education for real world</div>
-        </li>
-      </ul>
-    </section>
-
-  </div>
+  <!-- 여기에 HTML 구조를 작성하세요. 아래 코드는 예제이며, 얼마든지 바꿀 수 있습니다 -->
+  <div id="greeting">twittler</div>
+  <section class="reply">
+    <div class="usernameBox">
+      <span> username </span><input type="text" class="inputUsername">
+    </div>
+    <div>
+      <span> tweet </span><textarea class="inputMessage"></textarea>
+    </div>
+    <button class="tweetButton">tweet!</button>
+    <button class="randomtweet">random!</button>
+  </section>
+  
+  <section class="readReply">
+    <ul class="replyList">
+      <li>
+        <div class="username">김코딩</div>   
+        <div class="time">2020-01-22 09:10:00</div>
+        <div class="tweet">트윗내용입니다.</div>
+      </li>
+    </ul>
+  </section>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.js"></script>
+  <script src="jquery.timeago.ko.js"></script> -->
+  <script src="script.js"></script>
+  
 </body>
 </html>

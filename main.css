@@ -1,0 +1,77 @@
+#greeting {
+  font-size: 2em;
+  font-family: sans-serif;
+  font-weight: bold;
+  border: 2px solid #ccc;
+  border-radius: 1em;
+  color: white;
+  background-color: #eee;
+  text-shadow: 0 0 5px #333;
+  text-align: center;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+.reply {
+  padding:10px;
+  height:250px;
+  border-radius: 1em;
+  background-color: #81B2D9;
+  margin:5px 0.5em;
+  font-family: sans-serif;
+  color:white;
+  font-size:20px;
+}
+.usernameBox{
+  margin-bottom: 10px;
+}
+.reply span {
+  display: block;
+}
+.inputMessage{
+  width:70%;
+  height:100px;
+}
+.tweetButton, .randomtweet{
+  padding: 10px;
+  font-size: 0.7em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.readReply{
+  /* border: 1px solid black; */
+  margin: 1em 0.5em;
+  background-color: #81B2D9;
+  border-radius: 1em;
+  color:white;
+  padding : 10px 10px;
+}
+.replyList{
+  list-style: none;
+  padding : 0 0 0 10px;
+}
+
+.replyList .tweet {
+  border-bottom:1px solid #9C9D9E;
+  padding-bottom: 10px;
+}
+
+.replyList li {
+  position: relative;
+}
+
+.username{
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline;
+}
+
+.username:hover{
+  color:red;
+}
+.time{
+  position: absolute;
+  right: 10px;
+}
+
