@@ -10,66 +10,63 @@
 const randomtweetbutton = document.querySelector(".randomtweet");
 const jsUl = document.querySelector(".replyList");
 const jButton = document.querySelector('.tweetButton')
+const jGoBack = document.querySelector(".goBack");
 
 function printComment (user) {
     jsUl.innerHTML = '';
-user.forEach(function(userInfo){
-  // username html 태그를 만든다
-  const jUsername = document.createElement("div");
-  jUsername.classList.add("username");
-  // time html 태그를 만든다
-  const jTime = document.createElement("div");
-  jTime.classList.add("time");
-  //jTime.setAttribute("datetime", userInfo.created_at);
-  // tweet html 태그를 만든다
-  const jTweet = document.createElement("div");
-  jTweet.classList.add("tweet");
-  
-  // username 태그에 userInfo.user 담는다.
-  jUsername.textContent = userInfo.user;
-  jTime.textContent = userInfo.created_at;
-  jTweet.textContent = userInfo.message;
+    user.forEach(function(userInfo){
+        const jUsername = document.createElement("div");
+        const jTime = document.createElement("div");
+        const jTweet = document.createElement("div");
 
-  // li 를 하나 만든다.
-  const newLi = document.createElement("li");
-  // li 에 각각 추가한다.
-  newLi.appendChild(jUsername);
-  newLi.appendChild(jTime);
-  newLi.appendChild(jTweet);
-  // li를 ul에 추가한다.
-  jsUl.appendChild(newLi);
+        jUsername.classList.add("username");
+        jTime.classList.add("time");
+        jTweet.classList.add("tweet");
+        
+        jUsername.textContent = userInfo.user;
+        jTime.textContent = userInfo.created_at;
+        jTweet.textContent = userInfo.message;
 
-  jUsername.addEventListener('click', filtering)
-})
+        // li 를 하나 만든다.
+        const newLi = document.createElement("li");
+        // li 에 각각 추가한다.
+        newLi.appendChild(jUsername);
+        newLi.appendChild(jTime);
+        newLi.appendChild(jTweet);
+        // li를 ul에 추가한다.
+        jsUl.appendChild(newLi);
+
+        jUsername.addEventListener('click', filtering);
+    })
 }
 
-printComment(DATA);
+function checkUsernameAndMessage(username,message){
+    if(username === "" || message === ""){
+        alert("이름과 메시지를 입력하시오.")
+        return false;
+    }
+    return true;
+}
 
 function addTweet () {
     const jInputUsername = document.querySelector('.inputUsername')
     const jInputMessage = document.querySelector('.inputMessage')
-    
-    // const jInputUserTag = document.createElement('a')
-    // jInputUserTag.textContent = jInputUsername.value;
 
-    // const jInputMessageTag = document.createElement('div')
-    // jInputMessageTag.textContent = jInputMessage.value;
-    
-    // const jInputTimeTag = document.createElement('div')
-    // jInputTimeTag.textContent = newTime();
+    const username = jInputUsername.value;
+    const message = jInputMessage.value;
+    // 이름과 메시지가 비어있을때 alert()을 주기
+    if(!checkUsernameAndMessage(username,message)){
+        return false;
+    }
 
-    // const newLi = document.createElement("li");
-    // // li 에 각각 추가한다.
-    // newLi.appendChild(jInputUserTag);
-    // //newLi.appendChild(Date.now());
-    // newLi.appendChild(jInputTimeTag);
-    // newLi.appendChild(jInputMessageTag);
-    // // li를 ul에 추가한다.
-    // jsUl.appendChild(newLi);
-
-
-    DATA.unshift({user : jInputUsername.value, message : jInputMessage.value, created_at : newTime()})
+    DATA.unshift({
+        user : username, 
+        message : message, 
+        created_at : newTime()})
     printComment(DATA)
+
+    jInputUsername.value = "";
+    jInputMessage.value = "";
 }
 
 function newTime() {
@@ -100,30 +97,28 @@ function newTime() {
     if (second < 10) {
         second = '0' + second
     }
-
-
-
     return year + '-' + month + '-' + date + ' '+ hour + ':' + minute + ':' + second
 }
 
 function filtering(event){
- //   console.log(event.target.text)
     let filteringArray = DATA.filter(function(userInfo){
-        return userInfo.user === event.target.text
-    })
-    
-    printComment(filteringArray)
+        return userInfo.user === event.target.textContent;
+    });
+    printComment(filteringArray);
 }
 
 function generateRandomTweet (){
-    let tweet =  generateNewTweet();
+    let tweet = generateNewTweet();
     DATA.unshift(tweet)
     printComment(DATA)
 }
 
+function goBackTweet(){
+    printComment(DATA);
+}
+
+printComment(DATA);
+
 jButton.onclick = addTweet;
 randomtweetbutton.onclick = generateRandomTweet;
-
-// jQuery(document).ready(function() {
-//   $("time.timeago").timeago();
-// });
+jGoBack.onclick = goBackTweet;
